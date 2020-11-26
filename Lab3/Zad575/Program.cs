@@ -7,30 +7,19 @@ using System.Threading.Tasks;
 namespace Zad575
 {
     class Program
-    {
-        static bool CzyZnaczaca(int liczba)
-        {
-            int suma = 0;
-            int licznik = 0;
-
-            for(int i=2; i<Math.Sqrt(liczba); i++)
-            {
-                if(liczba%i == 0)
-                {
-                    suma += i;
-                    licznik++;
-                }
-            }
-
-            double srednia = (suma * 1.0) / licznik;
-            if (srednia <= Math.Sqrt(liczba))
-                return true;
-            return false;
-        }
+    {       
         static void Main(string[] args)
         {
             int t = int.Parse(Console.ReadLine());
-
+            
+            List <int> liczbyZnaczace = new List<int>();
+            for(int i=2; i<=Math.Sqrt(1000000000); i++)
+            {
+                if(czyPierwsza(i)==true)
+                    liczbyZnaczace.Add(i*i);
+                
+                    
+            }
             while(t > 0)
             {
                 string[] liczby = Console.ReadLine().Split(' ');
@@ -38,14 +27,29 @@ namespace Zad575
                 int b = int.Parse(liczby[1]);
 
                 int licznik = 0;
-                for(int i=a; i<=b; i++)
+                for(int i=0; i<liczbyZnaczace.Count; i++)
                 {
-                    if (CzyZnaczaca(i))
+                    if (liczbyZnaczace[i] >= a && liczbyZnaczace[i] <= b)
                         licznik++;
+                    if(liczbyZnaczace[i]>b)
+                        break;
                 }
                 Console.WriteLine(licznik);
                 t--;
             }
         }
+
+        static bool czyPierwsza(int a)
+        {
+            for(int i=2; i<= Math.Sqrt(a); i++)
+            {
+                if(a%i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+       
     }
 }

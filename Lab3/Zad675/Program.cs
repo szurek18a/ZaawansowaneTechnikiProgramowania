@@ -22,16 +22,16 @@ namespace Zad675
                     int kroki = int.Parse(tab[1]);
                     switch (kier)
                     {
-                        case 0:
+                        case 0: //polnoc
                             skarb[0] += kroki; 
                             break;
-                        case 1:
+                        case 1: //poludnie
                             skarb[0] -= kroki;
                             break;
-                        case 2:
+                        case 2: //zachod
                             skarb[1] += kroki;
                             break;
-                        case 3:
+                        case 3: //wschod
                             skarb[1] -= kroki;
                             break;
                     }
