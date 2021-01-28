@@ -5,34 +5,35 @@
 #include<cstdlib>
 using namespace std;
 
-bool czy_pierwsza(int n)
-{
-	if (n < 2)
-		return false;
-
-	for (int i = 2; i * i <= n; i++)
-		if (n % i == 0)
-			return false;
-	return true;
-}
-
 int main()
 {
-	int n, liczba;
+    int n, number, mod;
+    cin >> n;
 
-	cout << "Podaj liczbe testow: ";
-	cin >> n;
-	
-	for (int i = 0; i < n; i++)
-	{
-		cin >> liczba;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> number;
 
-		if (czy_pierwsza(liczba))
-			cout << "Liczba " << liczba << " jest pierwsza" << endl;
-		else
-			cout << "Liczba " << liczba << " nie jest pierwsza" << endl;
-	}
+        if (number < 2) cout << "NIE" << endl;
+        else if (number == 2) cout << "TAK" << endl;
+        else
+        {
+            for (int j = 2; j < number; j++)
+            {
+                mod = number % j;
+                if (mod == 0)
+                {
+                    cout << "NIE" << endl;
+                    break;
+                }
+            }
+            if (mod == 1)
+            {
+                cout << "TAK" << endl;
+            }
+        }
+    }
 
-	return 0;
+    return 0;
 }
 
