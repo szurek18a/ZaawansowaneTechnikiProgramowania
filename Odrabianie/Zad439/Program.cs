@@ -22,7 +22,7 @@ namespace Zad439
 						   
 			   product = BigInteger.Multiply(number1, number2);
 			   Console.WriteLine(product.ToString());
-			   }
+			}
 		}		
 	}
 }
