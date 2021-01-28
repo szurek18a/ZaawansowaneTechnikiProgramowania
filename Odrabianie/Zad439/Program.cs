@@ -11,17 +11,17 @@ namespace Zad439
     {
         static void Main(string[] args)
         {
+			BigInteger product;
 			int n = int.Parse(Console.ReadLine());
 			for (int i = 0; i < n; i++)
-			{							
+			{
 				string[] text = Console.ReadLine().Split();
-				var l1 = BigInteger.Parse(text[0]);
-				var l2 = BigInteger.Parse(text[1]);
-
-				var wynik = BigInteger.Multiply(l1, l2);
-
-				Console.WriteLine(wynik.ToString());
-			}		
-		}
-    }
+				long number1 = long.Parse(text[0]);
+				long number2 = long.Parse(text[1]);
+							   
+			    product = BigInteger.Multiply(number1, number2);
+			    Console.WriteLine(product.ToString());
+			}
+		}		
+	}
 }
