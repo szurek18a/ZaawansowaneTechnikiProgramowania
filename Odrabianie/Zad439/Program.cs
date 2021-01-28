@@ -18,10 +18,11 @@ namespace Zad439
 				string[] text = Console.ReadLine().Split();
 				long number1 = long.Parse(text[0]);
 				long number2 = long.Parse(text[1]);
-							   
-			    product = BigInteger.Multiply(number1, number2);
-			    Console.WriteLine(product.ToString());
-			}
+				
+						   
+			   product = BigInteger.Multiply(number1, number2);
+			   Console.WriteLine(product.ToString());
+			   }
 		}		
 	}
 }
